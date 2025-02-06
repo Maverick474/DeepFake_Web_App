@@ -1,0 +1,6 @@
+#Ignore Venv
+venv/
+.venv/
+
+#Ignore .pt model
+*.pt
