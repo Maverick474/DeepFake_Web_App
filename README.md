@@ -4,7 +4,7 @@ Deepfakes are synthetic media created using deep learning techniques, such as Ge
 
 # How to Run
 
-1. Open Terminal or Command prompt from the location where you want to set the project.
+1. Open Terminal or Command prompt from the location where you want to set the project. Recommended is to download and install git bash for terminal
 2. Now run the following command,
 > git clone https://github.com/Maverick474/DeepFake_Web_App.git
 
