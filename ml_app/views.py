@@ -27,6 +27,9 @@ from random import choice
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from django.contrib import messages
+from .forms import FeedbackForm
+
 index_template_name = 'index.html'
 predict_template_name = 'predict.html'
 
@@ -544,3 +547,23 @@ def get_data(request):
     is_splitted = request.session["is_video_splitted"] if "is_video_splitted" in request.session else None
     data = {"is_splitted": is_splitted}
     return JsonResponse(data)
+
+def feedback_view(request):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            # Process the feedback (e.g., save to database or send email)
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            
+            # Example: Print feedback to console (replace with your logic)
+            print(f"Feedback from {name} ({email}): {message}")
+            
+            # Show a success message
+            messages.success(request, 'Thank you for your feedback!')
+            return redirect('ml_app:home')  # Redirect to the home page
+    else:
+        form = FeedbackForm()
+    
+    return render(request, 'feedback.html', {'form': form})

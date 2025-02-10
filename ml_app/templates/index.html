@@ -242,12 +242,14 @@
                   style="cursor: pointer"
                   >How It Works</span
                 >
-                <span
-                  class="home-nav42 bodySmall"
-                  onclick="scrollToFAQ()"
-                  style="cursor: pointer"
-                  >FAQ</span
-                >
+                <a href="{% url 'ml_app:feedback' %}" style="text-decoration: none; color: black;">
+                  <span
+                    class="home-nav42 bodySmall"
+                    style="cursor: pointer"
+                  >
+                    Feedback
+                  </span>
+                </a>
               </nav>
             </div>
             <div data-thq="thq-burger-menu" class="home-burger-menu">
@@ -279,7 +281,9 @@
                   <span class="home-nav121 bodySmall">Home</span>
                   <span class="home-nav221 bodySmall">Detection</span>
                   <span class="home-nav321 bodySmall">How It Works</span>
-                  <span class="home-nav421 bodySmall">FAQ</span>
+                  <a href="{% url 'ml_app:feedback' %}" style="text-decoration: none;">
+                    <span class="home-nav421 bodySmall">Feedback</span>
+                  </a>
                 </nav>
                 <div class="home-buttons1">
                   <button class="buttonFlat">Login</button>
@@ -615,7 +619,7 @@
                   id="videoUpload"
                   type="submit"
                   name="submit"
-                  value="Upload"
+                  value="Scan"
                   class="btn btn-success mt-3 btn-block"
                 />
               </form>
