@@ -557,7 +557,7 @@ def feedback_view(request):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             
-            # Example: Print feedback to console
+            #Print feedback to console
             print(f"Feedback from {name} ({email}): {message}")
             
             # Show a success message
